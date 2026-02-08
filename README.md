@@ -1,8 +1,9 @@
 # Cieye
 
-TODO: Delete this and the text below, and describe your gem
+`cieye` is a real-time monitoring and reporting tool for Ruby test suites. It provides a live terminal dashboard (TUI) to track test progress as it happens, especially useful for long-running or parallelized test runs. By using Unix sockets, it offers low-latency updates without significant overhead.
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/cieye`. To experiment with that code, run `bin/console` for an interactive prompt.
+## The Problem
+When running large test suites, it's often difficult to see what's happening in real-time. You're either left with a wall of dots or wait until the very end to see failures. `cieye` solves this by giving you a live view of which tests are running, failing, or passing, along with a comprehensive HTML report for post-run analysis.
 
 ## Installation
 
