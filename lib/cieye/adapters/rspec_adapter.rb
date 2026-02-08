@@ -143,6 +143,7 @@ module Cieye
         socket.close
       rescue Errno::ENOENT, Errno::ECONNREFUSED => e
         # Monitor is likely not running; fail silently
+        warn e.message
       end
     end
   end

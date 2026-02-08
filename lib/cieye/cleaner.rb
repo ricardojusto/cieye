@@ -19,7 +19,7 @@ module Cieye
       coverage_path = File.join(Dir.pwd, "coverage/index.html")
       FileUtils.rm_f(coverage_path) if File.exist?(coverage_path)
 
-      puts "🧹 Old RSpec reports, JSON results and Simplecov report cleared."
+      # puts "🧹 Old RSpec reports, JSON results and Simplecov report cleared."
     end
 
     def self.cleanup_before_run(artifact_path = nil)

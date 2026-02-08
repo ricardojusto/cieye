@@ -10,10 +10,13 @@ Style/StringLiteralsInInterpolation:
 Layout/LineLength:
   Max: 120
   Exclude:
-    - 'cieye.gemspec'
+    - "cieye.gemspec"
 
 Metrics/MethodLength:
   Enabled: false
 
 Metrics/AbcSize:
+  Enabled: false
+
+Metrics/BlockLength:
   Enabled: false

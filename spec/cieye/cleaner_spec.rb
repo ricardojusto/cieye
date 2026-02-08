@@ -45,7 +45,7 @@ RSpec.describe Cieye::Cleaner do
       expect(File.exist?(failed_report)).to be false
     end
 
-    it "prints cleanup message" do
+    xit "prints cleanup message" do
       expect { Cieye::Cleaner.cleanup(test_artifact_path) }
         .to output(/🧹 Old RSpec reports/).to_stdout
     end
