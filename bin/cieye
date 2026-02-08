@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+# This adds the 'lib' folder to the load path so we can require our code
+$LOAD_PATH.unshift File.expand_path("../lib", __dir__)
+
+require "cieye"
+
+puts "Cieye: The Eye is open and watching..."
+server = Cieye::Server.new
+server.start
