@@ -3,6 +3,7 @@
 require "rspec/core/formatters/base_text_formatter"
 require "socket"
 require "json"
+require_relative "../base"
 
 module Cieye
   module Adapters
@@ -137,12 +138,10 @@ module Cieye
 
       # Sends a Hash as JSON over the Unix Socket
       def send_payload(payload_hash)
-        # @old_stdout.puts "DEBUG: Sending payload: #{payload_hash[:type]} - #{payload_hash[:status] || payload_hash[:message]}"
         socket = UNIXSocket.new(@socket_path)
         socket.puts(payload_hash.to_json)
         socket.close
       rescue Errno::ENOENT, Errno::ECONNREFUSED => e
-        warn "DEBUG: Socket error: #{e.message}"
         # Monitor is likely not running; fail silently
       end
     end
