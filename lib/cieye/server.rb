@@ -44,7 +44,7 @@ module Cieye
           rescue Errno::EBADF, IOError, IO::WaitReadable, Errno::EINVAL
             break
           rescue StandardError => e
-            warn "Server Error: #{e.message}"
+            Cieye::Logger.warn("Server: #{e.message}")
             break
           end
         end

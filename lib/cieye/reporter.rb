@@ -25,7 +25,7 @@ module Cieye
 
     def generate
       json_files = Dir.glob(File.join(artifact_path, "rspec_results*.json"))
-      return puts "⚠️  No RSpec JSON results found." if json_files.empty?
+      return Cieye::Logger.warn("No RSpec JSON results found.") if json_files.empty?
 
       collate_data(json_files)
       generate_execution_report

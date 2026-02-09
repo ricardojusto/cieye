@@ -20,7 +20,7 @@ module Cieye
 
       send_to_socket(payload)
     rescue StandardError => e
-      warn "Cieye SocketClient Error: #{e.message}"
+      Cieye::Logger.warn("SocketClient: #{e.message}")
     end
 
     private

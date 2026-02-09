@@ -45,9 +45,11 @@ RSpec.describe Cieye::Cleaner do
       expect(File.exist?(failed_report)).to be false
     end
 
-    xit "prints cleanup message" do
-      expect { Cieye::Cleaner.cleanup(test_artifact_path) }
-        .to output(/🧹 Old RSpec reports/).to_stdout
+    it "logs cleanup message" do
+      expect(Cieye::Logger).to receive(:info)
+        .with("Old RSpec reports, JSON results and Simplecov report cleared.")
+
+      Cieye::Cleaner.cleanup(test_artifact_path)
     end
 
     it "uses default artifact path when none provided" do

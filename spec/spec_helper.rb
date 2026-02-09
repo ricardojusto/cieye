@@ -12,4 +12,14 @@ RSpec.configure do |config|
   config.expect_with :rspec do |c|
     c.syntax = :expect
   end
+
+  # Silence Cieye::Logger globally so log output does not leak into rspec progress.
+  # Individual specs that need to verify logger behaviour can override with
+  # allow(...).and_call_original or expect(...).to receive(...).
+  config.before do
+    allow(Cieye::Logger).to receive(:info)
+    allow(Cieye::Logger).to receive(:warn)
+    allow(Cieye::Logger).to receive(:error)
+    allow(Cieye::Logger).to receive(:deprecated)
+  end
 end

@@ -2,6 +2,7 @@
 
 require_relative "cieye/version"
 require_relative "cieye/base"
+require_relative "cieye/logger"
 require_relative "cieye/config"
 require_relative "cieye/server"
 require_relative "cieye/store"
